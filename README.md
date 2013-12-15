@@ -73,3 +73,6 @@ Please commit only in develop branch. The master branch will always contain a st
 ### Stats
 
 TODO badge
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/panique/php-login-one-file/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
