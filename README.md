@@ -1,4 +1,4 @@
-# A simple PHP login script, in one file
+# A simple PHP login script (in one file)
 
 A simple, but secure PHP login script in one file and a flat-file SQLite database.
 No installation needed, ready to go in under 60 seconds. Uses the ultra-modern & future-proof PHP 5.5.
@@ -8,14 +8,23 @@ functions available in those versions too). Follow the project on **[Twitter](ht
 **[Google+](https://plus.google.com/104110071861201951660)** and have a look on the official support blog
 **[Dev Metal](http://www.dev-metal.com)**. Ask questions in the [Official Support Forum](http://109.75.177.79/forum/).
 
-TODO: part of the php-login project
+#### This script is part of the php-login project, a collection of 4 different login scripts (for different use cases
+and different developer skill levels). See [php-login.net](http://www.php-login.net) for more info.
 
-1. **One-file version:** Full login script in one file. Uses a one-file SQLite database (no MySQL needed) and PDO. Features: Register, login, logout.
-2. **Minimal version** All the basic functions in a clean file structure, uses MySQL and mysqli. Register, login, logout.
+1. **One-file version:** Full login script in one file. Uses a one-file SQLite database (no MySQL needed) and PDO.
+   Features: Register, login, logout.
+   https://github.com/panique/php-login-one-file
+2. **Minimal version** All the basic functions in a clean file structure, uses MySQL and mysqli.
+   Register, login, logout.
+   https://github.com/panique/php-login-minimal
+3. **Advanced version** Similar to the minimal version, but full of features.
+   Uses PDO, Captchas, mail sending via SMTP and much more.
+   https://github.com/panique/php-login-advanced
 3. **Professional version** Everything comes with a professional MVC framework structure, perfect for building
    real applications. Additional features like: URL rewriting, professional usage of controllers and actions, PDO, MySQL,
    mail sending via PHPMailer (SMTP or PHP's mail() function/linux sendmail), user profile pages, public user profiles,
-   gravatars and local avatars, account upgrade/downgrade etc.
+   gravatars and local avatars, account upgrade/downgrade etc., login via Facebook, Composer integration, etc.
+   https://github.com/panique/php-login
 
 ### Live-demo
 
@@ -25,18 +34,14 @@ TODO: part of the php-login project
 
 - PHP 5.3.7+
 
-### Installation
-
-TODO!!!
-
-#### Very detailed setup guideline
-
-A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-to-install-php-login-nets-0-one-file-login-script-on-ubuntu/).
-
-#### Quick setup
+### Installation (quick setup)
 
 Call the install script via `_install.php`, which will create a `users.db` file right in the `database` folder. That's it.
 Please note that the `database` folder needs to be writable and you need to have the SQLite extension activated in PHP.
+
+### Installation (very detailed setup)
+
+A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-to-install-php-login-nets-0-one-file-login-script-on-ubuntu/).
 
 ### Useful links
 
