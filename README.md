@@ -8,8 +8,9 @@ functions available in those versions too). Follow the project on **[Twitter](ht
 **[Google+](https://plus.google.com/104110071861201951660)** and have a look on the official support blog
 **[Dev Metal](http://www.dev-metal.com)**. Ask questions in the [Official Support Forum](http://109.75.177.79/forum/).
 
-#### This script is part of the php-login project, a collection of 4 different login scripts (for different use cases
-and different developer skill levels). See [php-login.net](http://www.php-login.net) for more info.
+**This script is part of the php-login project, a collection of 4 different login scripts**.
+See [php-login.net](http://www.php-login.net) for more info.
+*Please note: The entire project is currently in a restructuring process, look into https://github.com/panique/php-login for the latest stable version and install tutorials*
 
 1. **One-file version:** Full login script in one file. Uses a one-file SQLite database (no MySQL needed) and PDO.
    Features: Register, login, logout.
@@ -32,7 +33,7 @@ and different developer skill levels). See [php-login.net](http://www.php-login.
 
 ### Requirements
 
-- PHP 5.3.7+
+- PHP 5.3.7+ (with PDO and SQLite extension activated)
 
 ### Installation (quick setup)
 
