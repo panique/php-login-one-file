@@ -27,38 +27,39 @@ See [php-login.net](http://www.php-login.net) for more info.
    gravatars and local avatars, account upgrade/downgrade etc., login via Facebook, Composer integration, etc.
    https://github.com/panique/php-login
 
-### Live-demo
+## Live-demo
 
-[Click here to see a live demo](http://php-login.net/demo1.html) or [here to see the server's phpinfo()](http://109.75.177.79:80/).
+Live demo: http://php-login.net/demo1.html
+Live demo's phpinfo(): http://109.75.177.79:80/
 
-### Requirements
+## Requirements
 
 - PHP 5.3.7+ (with PDO and SQLite extension activated)
 
-### Installation (quick setup)
+## Installation (quick setup)
 
 Call the install script via `_install.php`, which will create a `users.db` file right in the `database` folder. That's it.
 Please note that the `database` folder needs to be writable and you need to have the SQLite extension activated in PHP.
 
-### Installation (very detailed setup)
+## Installation (very detailed setup)
 
 A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-to-install-php-login-nets-0-one-file-login-script-on-ubuntu/).
 
-### Useful links
+## Useful links
 
 - [How to install SQLite and Ubuntu and Debian](http://www.dev-metal.com/how-to-install-sqlite-driver-for-php-in-ubuntu-debian/)
 - [How to use PDO](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
 - [A little guideline on how to use the PHP 5.5 password hashing functions and it's "library plugin" based PHP 5.3 & 5.4 implementation](http://www.dev-metal.com/use-php-5-5-password-hashing-functions/)
 
-### How this script works
+## How this script works
 
 TODO (also explain the files and folders)
 
-### License
+## License
 
 Licensed under [MIT](http://www.opensource.org/licenses/mit-license.php).
 
-### Support / Donate
+## Support / Donate
 
 If you think this script is useful and saves you a lot of work, then think about supporting the project by donating via
 [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P5YLUK4MW3LDG)
@@ -66,13 +67,11 @@ or [GitTip](https://www.gittip.com/Panique/) or renting your next server at
 [DigitalOcean](https://www.digitalocean.com/?refcode=40d978532a20). DigitalOcean offers SSD servers for $5+ per month
 or $0.007 per hour (!). Or, if you feel skilled, contribute to this project (features, bugfixes, etc).
 
-### Contribute
+## Contribute
 
 Please commit only in develop branch. The master branch will always contain a stable version.
 
-### Stats
-
-TODO badge
+## Stats
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/panique/php-login-one-file/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
