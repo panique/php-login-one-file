@@ -29,8 +29,9 @@ See [php-login.net](http://www.php-login.net) for more info.
 
 ## Live-demo
 
-Live demo: http://php-login.net/demo1.html
-Live demo's phpinfo(): http://109.75.177.79:80/
+**Live demo: http://php-login.net/demo1.html**
+
+**Live demo's phpinfo(): http://109.75.177.79:80/**
 
 ## Requirements
 
