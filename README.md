@@ -10,7 +10,7 @@ functions available in those versions too). Follow the project on **[Twitter](ht
 
 **This script is part of the php-login project, a collection of 4 different login scripts**.
 See [php-login.net](http://www.php-login.net) for more info.
-*Please note: The entire project is currently in a restructuring process, look into https://github.com/panique/php-login for the latest stable version and install tutorials*
+*Please note: The entire project is currently in a restructuring process, look into https://github.com/panique/php-login for the latest stable version and install tutorials.*
 
 1. **One-file version:** Full login script in one file. Uses a one-file SQLite database (no MySQL needed) and PDO.
    Features: Register, login, logout.
