@@ -10,6 +10,7 @@ functions available in those versions too). Follow the project on **[Twitter](ht
 
 **This script is part of the php-login project, a collection of 4 different login scripts**.
 See [php-login.net](http://www.php-login.net) for more info.
+
 *Please note: The entire project is currently in a restructuring process, look into https://github.com/panique/php-login for the latest stable version and install tutorials.*
 
 1. **One-file version:** Full login script in one file. Uses a one-file SQLite database (no MySQL needed) and PDO.
@@ -37,7 +38,8 @@ Live demo **[here](http://php-login.net/demo1.html)**, live demo's phpinfo() **[
 
 ## Installation (quick setup)
 
-Run the install script `_install.php` in the `_installation` folder which will create a `users.db` file. That's it.
+Run the install script `_install.php` in the `_installation` folder which will create a `users.db` file (the database).
+That's it.
 
 ## Installation (very detailed setup)
 
@@ -49,13 +51,10 @@ A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-
 - [How to use PDO](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
 - [A little guideline on how to use the PHP 5.5 password hashing functions and it's "library plugin" based PHP 5.3 & 5.4 implementation](http://www.dev-metal.com/use-php-5-5-password-hashing-functions/)
 
-## How this script works
-
-TODO (also explain the files and folders)
-
 ## License
 
-Licensed under [MIT](http://www.opensource.org/licenses/mit-license.php).
+Licensed under [MIT](http://www.opensource.org/licenses/mit-license.php). You can use this script for free for any
+private or commercial projects.
 
 ## Support / Donate
 
@@ -68,7 +67,7 @@ If you think this script is useful and saves you a lot of work, then think about
 
 ## Contribute
 
-Please commit only in develop branch. The master branch will always contain a stable version.
+Please commit only in *develop* branch. The *master* branch will always contain a stable version.
 
 ## Stats
 
