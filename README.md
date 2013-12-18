@@ -37,8 +37,7 @@ Live demo **[here](http://php-login.net/demo1.html)**, live demo's phpinfo() **[
 
 ## Installation (quick setup)
 
-Call the install script via `_install.php`, which will create a `users.db` file right in the `database` folder. That's it.
-Please note that the `database` folder needs to be writable and you need to have the SQLite extension activated in PHP.
+Run the install script `_install.php` in the `_installation` folder which will create a `users.db` file. That's it.
 
 ## Installation (very detailed setup)
 

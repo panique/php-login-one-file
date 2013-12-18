@@ -5,14 +5,7 @@
  *
  * An entire php application with user registration, login and logout in one file.
  * Uses very modern password hashing via the PHP 5.5 password hashing functions.
- * This project includes a compatibility file to make these functions available in PHP 5.3.7+ and PHP 5.4+
- *
- * Potential TODO:
- * 1. POST & GET directly in methods ? would be cleaner to pass this into the methods ?
- * 2. "Don't use else" rule ? Might be useful in VERY good PHP code, but c'mon, ELSE makes code much more readable,
- *    especially in this little script
- * 3. Max level of "if nesting" should be only ONE. But I think in this little script that's not necessary and would
- *    make things more complicated
+ * This project includes a compatibility file to make these functions available in PHP 5.3.7+ and PHP 5.4+.
  *
  * @author Panique
  * @link https://github.com/panique/php-login-one-file/
@@ -28,7 +21,7 @@ class OneFileLoginApplication
     /**
      * @var string Path of the database file (create this with _install.php)
      */
-    private $db_sqlite_path = "database/users.db";
+    private $db_sqlite_path = "./users.db";
 
     /**
      * @var object Database connection
@@ -73,6 +66,7 @@ class OneFileLoginApplication
         } elseif (version_compare(PHP_VERSION, '5.5.0', '>=')) {
             return true;
         }
+        // default return
         return false;
     }
 

@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 
 // config
 $db_type = "sqlite";
-$db_sqlite_path = "../database/users.db";
+$db_sqlite_path = "../users.db";
 
 // create new database file / connection (the file will be automatically created the first time a connection is made up)
 $db_connection = new PDO($db_type . ':' . $db_sqlite_path);
@@ -31,7 +31,7 @@ $query->execute();
 
 // check for success
 if (file_exists($db_sqlite_path)) {
-    echo "Database $db_sqlite_path exists, installation was successful.";
+    echo "Database $db_sqlite_path was created, installation was successful.";
 } else {
-    echo "Database $db_sqlite_path does not exist, installation was NOT successful. Missing folder write rights ?";
+    echo "Database $db_sqlite_path was not created, installation was NOT successful. Missing folder write rights ?";
 }
