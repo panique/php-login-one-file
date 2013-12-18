@@ -67,7 +67,7 @@ If you think this script is useful and saves you a lot of work, then think about
 
 ## Contribute
 
-Please commit only in *develop* branch. The *master* branch will always contain a stable version.
+Please commit only in *develop* branch). The *master* branch will always contain the stable version.
 
 ## Stats
 
