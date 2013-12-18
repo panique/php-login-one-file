@@ -45,6 +45,14 @@ That's it.
 
 A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-to-install-php-login-nets-0-one-file-login-script-on-ubuntu/).
 
+## Short guide
+
+The `index.php` does all the action, please look into the code for more info, everything is commented. The install script
+`_install.php` creates a database (a file named `users.db`) right into the root folder. The `.htaccess` protects your
+database file from being downloaded. The `password_compatibility_library.php` is only loaded automatically when you
+use a PHP version older than 5.5 to add support the new PHP 5.5 password hashing functions to these older PHP versions.
+The `_debug.php` is a little helper tool, it simply echoes out the contents of the database.
+
 ## Useful links
 
 - [How to install SQLite and Ubuntu and Debian](http://www.dev-metal.com/how-to-install-sqlite-driver-for-php-in-ubuntu-debian/)
