@@ -1,4 +1,4 @@
-# A simple PHP login script (in one file)
+# A PHP login script (ONE-FILE VERSION)
 
 A simple, but secure PHP login script in one file and a flat-file SQLite database.
 No installation needed, ready to go in under 60 seconds. Uses the ultra-modern & future-proof PHP 5.5.
@@ -53,6 +53,10 @@ database file from being downloaded. The `password_compatibility_library.php` is
 use a PHP version older than 5.5 to add the new PHP 5.5 password hashing functions to these older PHP versions.
 The `_debug.php` is a little helper tool, it simply echoes out the content of the database.
 
+## How this script works
+
+TODO: INSTALLATION-GUIDELINE MIT INFOGRAPHICS SCHREIBEN (und remote auf php-login.net hosten) !
+
 ## Useful links
 
 - [How to install SQLite and Ubuntu and Debian](http://www.dev-metal.com/how-to-install-sqlite-driver-for-php-in-ubuntu-debian/)
@@ -66,7 +70,7 @@ private or commercial projects.
 
 ## Support / Donate
 
-If you think this script is useful and saves you a lot of work, then think about supporting the project by
+If you think this script is useful and saves you a lot of work, then think about supporting the project:
 
 1. Donate via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P5YLUK4MW3LDG)
    or [GitTip](https://www.gittip.com/Panique/)
