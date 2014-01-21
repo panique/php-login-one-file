@@ -303,16 +303,17 @@ class OneFileLoginApplication
         // the constant PASSWORD_DEFAULT comes from PHP 5.5 or the password_compatibility_library
         $user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
 
-        $sql = 'SELECT * FROM users WHERE user_name = :user_name';
+        $sql = 'SELECT * FROM users WHERE user_name = :user_name OR user_email = :user_email';
         $query = $this->db_connection->prepare($sql);
         $query->bindValue(':user_name', $user_name);
+        $query->bindValue(':user_email', $user_email);
         $query->execute();
 
         // As there is no numRows() in SQLite/PDO (!!) we have to do it this way:
         // If you meet the inventor of PDO, punch him. Seriously.
         $result_row = $query->fetchObject();
         if ($result_row) {
-            $this->feedback = "Sorry, that username is already taken. Please choose another one.";
+            $this->feedback = "Sorry, that username / email is already taken. Please choose another one.";
         } else {
             $sql = 'INSERT INTO users (user_name, user_password_hash, user_email)
                     VALUES(:user_name, :user_password_hash, :user_email)';
