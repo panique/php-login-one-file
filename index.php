@@ -1,17 +1,22 @@
 <?php
-
+require_once("config.php");
 /**
- * Class OneFileLoginApplication
+ * Class Login
+ * An entire php login script in one file, one class.
  *
- * An entire php application with user registration, login and logout in one file.
- * Uses very modern password hashing via the PHP 5.5 password hashing functions.
- * This project includes a compatibility file to make these functions available in PHP 5.3.7+ and PHP 5.4+.
+ * Potential TODO:
+ * 1. POST & GET directly in methods ? would be cleaner to pass this into the methods ?
+ * 2. "Don't use else" rule ? Might be useful in VERY good PHP code, but c'mon, ELSE makes code much more readable,
+ *    especially in this little script
+ * 3. Max level of "if nesting" should be only ONE. But I think in this little script that's not necessary and would
+ *    make things more complicated
  *
+ * @package php-login
  * @author Panique
- * @link https://github.com/panique/php-login-one-file/
+ * @link https://github.com/panique/php-login/
  * @license http://opensource.org/licenses/MIT MIT License
  */
-class OneFileLoginApplication
+class Login
 {
     /**
      * @var string Type of used database (currently only SQLite, but feel free to expand this with mysql etc)
@@ -21,7 +26,7 @@ class OneFileLoginApplication
     /**
      * @var string Path of the database file (create this with _install.php)
      */
-    private $db_sqlite_path = "./users.db";
+    private $db_sqlite_path = "database/users.db";
 
     /**
      * @var object Database connection
@@ -66,7 +71,6 @@ class OneFileLoginApplication
         } elseif (version_compare(PHP_VERSION, '5.5.0', '>=')) {
             return true;
         }
-        // default return
         return false;
     }
 
@@ -79,6 +83,7 @@ class OneFileLoginApplication
         if (isset($_GET["action"]) && $_GET["action"] == "register") {
             $this->doRegistration();
             $this->showPageRegistration();
+			exit;
         } else {
             // start the session, always needed!
             $this->doStartSession();
@@ -89,6 +94,7 @@ class OneFileLoginApplication
                 $this->showPageLoggedIn();
             } else {
                 $this->showPageLoginForm();
+				exit;
             }
         }
     }
@@ -203,11 +209,7 @@ class OneFileLoginApplication
      */
     private function checkPasswordCorrectnessAndLogin()
     {
-        // remember: the user can log in with username or email address
-        $sql = 'SELECT user_name, user_email, user_password_hash
-                FROM users
-                WHERE user_name = :user_name OR user_email = :user_name
-                LIMIT 1';
+        $sql = 'SELECT user_name, user_email, user_password_hash FROM users WHERE user_name = :user_name LIMIT 1';
         $query = $this->db_connection->prepare($sql);
         $query->bindValue(':user_name', $_POST['user_name']);
         $query->execute();
@@ -303,17 +305,16 @@ class OneFileLoginApplication
         // the constant PASSWORD_DEFAULT comes from PHP 5.5 or the password_compatibility_library
         $user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
 
-        $sql = 'SELECT * FROM users WHERE user_name = :user_name OR user_email = :user_email';
+        $sql = 'SELECT * FROM users WHERE user_name = :user_name';
         $query = $this->db_connection->prepare($sql);
         $query->bindValue(':user_name', $user_name);
-        $query->bindValue(':user_email', $user_email);
         $query->execute();
 
         // As there is no numRows() in SQLite/PDO (!!) we have to do it this way:
         // If you meet the inventor of PDO, punch him. Seriously.
         $result_row = $query->fetchObject();
         if ($result_row) {
-            $this->feedback = "Sorry, that username / email is already taken. Please choose another one.";
+            $this->feedback = "Sorry, that username is already taken. Please choose another one.";
         } else {
             $sql = 'INSERT INTO users (user_name, user_password_hash, user_email)
                     VALUES(:user_name, :user_password_hash, :user_email)';
@@ -355,9 +356,9 @@ class OneFileLoginApplication
         if ($this->feedback) {
             echo $this->feedback . "<br/><br/>";
         }
-
+		/*
         echo 'Hello ' . $_SESSION['user_name'] . ', you are logged in.<br/><br/>';
-        echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '?action=logout">Log out</a>';
+        echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '?action=logout">Log out</a><br><br>'; */
     }
 
     /**
@@ -368,20 +369,24 @@ class OneFileLoginApplication
     private function showPageLoginForm()
     {
         if ($this->feedback) {
-            echo $this->feedback . "<br/><br/>";
+            echo '<div id="feedback"><img src="images/info.png" alt="info" style="height: 20px;"><b>&nbsp;&nbsp;'.$this->feedback . "</b></div><br/><br/>";
         }
-
+		echo '<center><div id="common_box">';
         echo '<h2>Login</h2>';
 
         echo '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '" name="loginform">';
-        echo '<label for="login_input_username">Username (or email)</label> ';
-        echo '<input id="login_input_username" type="text" name="user_name" required /> ';
+        echo '<label for="login_input_username">Username</label> ';
+        echo '<input id="login_input_username" type="text" name="user_name" required /><br> ';
         echo '<label for="login_input_password">Password</label> ';
-        echo '<input id="login_input_password" type="password" name="user_password" required /> ';
-        echo '<input type="submit"  name="login" value="Log in" />';
+        echo '<input id="login_input_password" type="password" name="user_password" required /><br><br>';
+        // echo '<div class="white_button"><a href="test">Log in</a></div>';
+		echo '<input type="submit"  name="login" style="width: 60px; height: 20px;" value="Log in">';
         echo '</form>';
 
-        echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '?action=register">Register new account</a>';
+        echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '?action=register">Register new account</a></div></center>';
+		// remove! just to test fixed divs!
+		//for($i=0;$i<100;$i++)
+		//  echo "hello<br>";
     }
 
     /**
@@ -395,23 +400,24 @@ class OneFileLoginApplication
             echo $this->feedback . "<br/><br/>";
         }
 
-        echo '<h2>Registration</h2>';
+        echo '<center><div id="common_box"><h2>Registration</h2>';
 
         echo '<form method="post" action="' . $_SERVER['SCRIPT_NAME'] . '?action=register" name="registerform">';
-        echo '<label for="login_input_username">Username (only letters and numbers, 2 to 64 characters)</label>';
-        echo '<input id="login_input_username" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required />';
+        echo '<label for="login_input_username">Username</label>';
+        echo '<input id="login_input_username" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" placeholder="2 to 64 chars" required /><br>';
         echo '<label for="login_input_email">User\'s email</label>';
-        echo '<input id="login_input_email" type="email" name="user_email" required />';
-        echo '<label for="login_input_password_new">Password (min. 6 characters)</label>';
-        echo '<input id="login_input_password_new" class="login_input" type="password" name="user_password_new" pattern=".{6,}" required autocomplete="off" />';
+        echo '<input id="login_input_email" type="email" name="user_email" required /><br>';
+        echo '<label for="login_input_password_new">Password </label>';
+        echo '<input id="login_input_password_new" class="login_input" type="password" name="user_password_new" pattern=".{6,}" placeholder="min. 6 characters" required autocomplete="off" /><br>';
         echo '<label for="login_input_password_repeat">Repeat password</label>';
-        echo '<input id="login_input_password_repeat" class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" />';
+        echo '<input id="login_input_password_repeat" class="login_input" type="password" name="user_password_repeat" pattern=".{6,}" required autocomplete="off" /><br>';
         echo '<input type="submit" name="register" value="Register" />';
         echo '</form>';
 
-        echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '">Homepage</a>';
+        echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '">Homepage</a></div>';
     }
 }
 
-// run the application
-$application = new OneFileLoginApplication();
+// runs the app
+//$login = new Login();
+?>
