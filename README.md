@@ -48,7 +48,8 @@ A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-
 ## Important security note
 
 In the default setup the database - which is only a simple users.db file - can be downloaded directly.
-To prevent this, change the path of your database file! The .htaccess in the project does not work in every setup.
+To prevent this, change the path of your database file! A path that is not accessable by public is perfect.
+The .htaccess in the project does not work in every setup.
 
 ## Short guide
 
