@@ -45,6 +45,11 @@ That's it.
 
 A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-to-install-php-login-nets-0-one-file-login-script-on-ubuntu/).
 
+## Important security note
+
+In the default setup the database - which is only a simple users.db file - can be downloaded directly.
+To prevent this, change the path of your database file! The .htaccess in the project does not work in every setup.
+
 ## Short guide
 
 The `index.php` does all the action, please look into the code for more info, everything is commented. The install script
@@ -52,10 +57,6 @@ The `index.php` does all the action, please look into the code for more info, ev
 database file from being downloaded. The `password_compatibility_library.php` is only loaded automatically when you
 use a PHP version older than 5.5 to add the new PHP 5.5 password hashing functions to these older PHP versions.
 The `_debug.php` is a little helper tool, it simply echoes out the content of the database.
-
-## How this script works
-
-TODO: INSTALLATION-GUIDELINE MIT INFOGRAPHICS SCHREIBEN (und remote auf php-login.net hosten) !
 
 ## Useful links
 
