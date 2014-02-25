@@ -49,7 +49,7 @@ A very detailed guideline [here in this blog post](http://www.dev-metal.com/how-
 
 In the default setup the database - which is only a simple users.db file - can be downloaded directly.
 To prevent this, change the path of your database file! A path that is not accessable by public is perfect.
-The .htaccess in the project does not work in every setup.
+The .htaccess in the project only works if you have set `AllowOverride` to `All` in your vhost / apache config.
 
 ## Short guide
 
