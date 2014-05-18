@@ -76,14 +76,13 @@ If you think this script is useful and saves you a lot of work, then think about
 
 1. Donate via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P5YLUK4MW3LDG)
    or [GitTip](https://www.gittip.com/Panique/)
-2. Rent your next server at [A2 Hosting](http://www.a2hosting.com/4471.html) or [DigitalOcean](https://www.digitalocean.com/?refcode=40d978532a20).
+2. Rent your next server at [DigitalOcean](https://www.digitalocean.com/?refcode=40d978532a20), it's just $5.
 3. Contribute to this project. Feel free to improve this project with your skills.
 
 ## Contribute
 
 Please commit only in *develop* branch). The *master* branch will always contain the stable version.
 
-## Stats
+## Hire me
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/panique/php-login-one-file/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+I'm available for freelance work, feel free to mail me if you like. The email address can be found easily.
