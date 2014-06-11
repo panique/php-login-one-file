@@ -131,7 +131,8 @@ class OneFileLoginApplication
      */
     private function doStartSession()
     {
-        session_start();
+        if(session_status() == PHP_SESSION_NONE) session_start();
+        // otherwise, an annoying notice will be thrown if the session is already started
     }
 
     /**
