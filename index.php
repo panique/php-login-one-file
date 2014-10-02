@@ -58,7 +58,7 @@ class OneFileLoginApplication
      */
     private function performMinimumRequirementsCheck()
     {
-        if (version_compare(PHP_VERSION, '5.3.7', '<')) {
+        if (version_compare(PHP_VERSION, '5.4.0', '<')) {
             echo "Sorry, Simple PHP Login does not run on a PHP version older than 5.3.7 !";
         } elseif (version_compare(PHP_VERSION, '5.5.0', '<')) {
             require_once("libraries/password_compatibility_library.php");
@@ -131,7 +131,7 @@ class OneFileLoginApplication
      */
     private function doStartSession()
     {
-        session_start();
+        if(session_status() == PHP_SESSION_NONE) session_start();
     }
 
     /**
