@@ -1,11 +1,10 @@
-# A PHP login script (ONE-FILE VERSION)
+# php-login-one-file
 
 A simple, but secure PHP login script in one file and a flat-file SQLite database.
+
 No installation needed, ready to go in under 60 seconds. Uses the ultra-modern & future-proof PHP 5.5.
 BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes those
-functions available in those versions too). Follow the project on **[Twitter](https://twitter.com/simplephplogin)** or
-**[Facebook](https://www.facebook.com/pages/PHP-Login-Script/461306677235868)**, also have a look on my blog
-**[Dev Metal](http://www.dev-metal.com)** if you like.
+functions available in those versions too).
 
 **This script is part of the php-login project, a collection of 4 different login scripts**.
 See [php-login.net](http://www.php-login.net) for more info.
