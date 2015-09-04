@@ -131,7 +131,7 @@ class OneFileLoginApplication
      */
     private function doStartSession()
     {
-        session_start();
+        if(session_status() == PHP_SESSION_NONE) session_start();
     }
 
     /**
@@ -258,6 +258,7 @@ class OneFileLoginApplication
             && strlen($_POST['user_email']) <= 64
             && filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)
             && !empty($_POST['user_password_new'])
+            && strlen($_POST['user_password_new']) >= 6
             && !empty($_POST['user_password_repeat'])
             && ($_POST['user_password_new'] === $_POST['user_password_repeat'])
         ) {

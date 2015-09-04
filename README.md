@@ -3,32 +3,30 @@
 A simple, but secure PHP login script in one file and a flat-file SQLite database.
 
 No installation needed, ready to go in under 60 seconds. Uses the ultra-modern & future-proof PHP 5.5.
-BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes those
-functions available in those versions too).
+BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes these
+functions available in these versions too). 
 
-**This script is part of the php-login project, a collection of 4 different login scripts**.
-See [php-login.net](http://www.php-login.net) for more info.
+This script was originally part of the "php-login project", a collection of 4 different login scripts made in the 2012-2013 PHP era to give especially beginners and security-inexperienced users a set of basic auth functions that fitted the most modern password hashing standards possible. You know, this was the time when even major companies like SONY and LinkedIn used horrible outdated MD5-hashing for their passwords (or even saved everything in plain text) and when the big PHP frameworks didn't have proper user auth solution out-of-the-box.
 
 [![Support the project](_installation/banner-host1plus.png)](https://affiliates.host1plus.com/ref/devmetal/36f4d828.html)
 
-1. **One-file version:** Full login script in one file. Uses a one-file SQLite database (no MySQL needed) and PDO.
-   Features: Register, login, logout.
-   https://github.com/panique/php-login-one-file
-2. **Minimal version** All the basic functions in a clean file structure, uses MySQL and mysqli.
-   Register, login, logout.
-   https://github.com/panique/php-login-minimal
-3. **Advanced version** Similar to the minimal version, but full of features.
-   Uses PDO, Captchas, mail sending via SMTP and much more.
-   https://github.com/panique/php-login-advanced
-3. **HUGE (professional version)** Everything comes with a professional MVC framework structure, perfect for building
-   real applications. Additional features like: URL rewriting, professional usage of controllers and actions, PDO, MySQL,
-   mail sending via PHPMailer (SMTP or PHP's mail() function/linux sendmail), user profile pages, public user profiles,
-   gravatars and local avatars, account upgrade/downgrade etc., login via Facebook, Composer integration, etc.
-   https://github.com/panique/huge
+Find the other versions here:
 
-## Live-demo
+**One-file version** (not maintained anymore)
+Full login script in one file. Uses a one-file SQLite database (no MySQL needed) and PDO: Register, login, logout.
+https://github.com/panique/php-login-one-file
 
-Live demo **[here](http://php-login.net/demo1.html)**, live demo's phpinfo() **[here](http://phpinfo.php-login.net/)**
+**Minimal version** (not maintained anymore)
+All the basic functions in a clean file structure, uses MySQL and mysqli. Register, login, logout.
+https://github.com/panique/php-login-minimal
+
+**Advanced version** (not maintained anymore)
+Similar to the minimal version, but full of features. Uses PDO, Captchas, mail sending via SMTP and much more.
+https://github.com/panique/php-login-advanced
+
+**HUGE (professional version)** 
+Quite professional MVC framework structure, useful for real applications. Additional features like: URL rewriting, mail sending via PHPMailer (SMTP or PHP's mail() function/linux sendmail), user profile pages, public user profiles, gravatars and local avatars, account upgrade/downgrade etc., OAuth2, Composer integration, etc.
+https://github.com/panique/huge
 
 ## Requirements
 
