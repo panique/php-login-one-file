@@ -8,8 +8,6 @@ functions available in these versions too).
 
 This script was originally part of the "php-login project", a collection of 4 different login scripts made in the 2012-2013 PHP era to give especially beginners and security-inexperienced users a set of basic auth functions that fitted the most modern password hashing standards possible. You know, this was the time when even major companies like SONY and LinkedIn used horrible outdated MD5-hashing for their passwords (or even saved everything in plain text) and when the big PHP frameworks didn't have proper user auth solution out-of-the-box.
 
-[![Support the project](_installation/banner-host1plus.png)](https://affiliates.host1plus.com/ref/devmetal/36f4d828.html)
-
 Find the other versions here:
 
 **One-file version** (not maintained anymore)
@@ -66,12 +64,12 @@ The `_debug.php` is a little helper tool, it simply echoes out the content of th
 Licensed under [MIT](http://www.opensource.org/licenses/mit-license.php). You can use this script for free for any
 private or commercial projects.
 
-## Support
-
-If you think this script is useful and saves you a lot of work, then please support the project by renting your new 
-server at [Host1Plus](https://affiliates.host1plus.com/ref/devmetal/36f4d828.html) or 
-[DigitalOcean](https://www.digitalocean.com/?refcode=40d978532a20), it's just $2 - $5.
-
 ## Contribute
 
 Please commit only in *develop* branch). The *master* branch will always contain the stable version.
+
+## Support
+
+Support the project by renting a server at [DigitalOcean](https://www.digitalocean.com/?refcode=40d978532a20) or just tipping a coffee at BuyMeACoffee.com. Thanks! :)
+
+<a href="https://www.buymeacoffee.com/panique" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
