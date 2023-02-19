@@ -347,15 +347,22 @@ class OneFileLoginApplication
     }
 
     /**
+      * Show feedback function, you can custom the way it's shown
+    */
+    private function showFeedback(){
+      if ($this->feedback) {
+        echo $this->feedback . "<br/><br/>";
+      }
+    }
+
+    /**
      * Simple demo-"page" that will be shown when the user is logged in.
      * In a real application you would probably include an html-template here, but for this extremely simple
      * demo the "echo" statements are totally okay.
      */
     private function showPageLoggedIn()
     {
-        if ($this->feedback) {
-            echo $this->feedback . "<br/><br/>";
-        }
+        $this->showFeedback();
 
         echo 'Hello ' . $_SESSION['user_name'] . ', you are logged in.<br/><br/>';
         echo '<a href="' . $_SERVER['SCRIPT_NAME'] . '?action=logout">Log out</a>';
@@ -368,9 +375,7 @@ class OneFileLoginApplication
      */
     private function showPageLoginForm()
     {
-        if ($this->feedback) {
-            echo $this->feedback . "<br/><br/>";
-        }
+        $this->showFeedback();
 
         echo '<h2>Login</h2>';
 
@@ -392,9 +397,7 @@ class OneFileLoginApplication
      */
     private function showPageRegistration()
     {
-        if ($this->feedback) {
-            echo $this->feedback . "<br/><br/>";
-        }
+        $this->showFeedback();
 
         echo '<h2>Registration</h2>';
 
